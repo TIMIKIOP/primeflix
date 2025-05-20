@@ -578,4 +578,19 @@ body {
     margin: 5px auto;
   }
 }
+/* Step 3: Make nav buttons and posters wrap nicely on small screens */
+.nav-buttons, .poster-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Step 4: Make elements scale better */
+.plan-box, .movie-poster, .nav-buttons button {
+  width: 90%;
+  max-width: 400px;
+  margin: 10px auto;
+  font-size: 18px;
+}
 
