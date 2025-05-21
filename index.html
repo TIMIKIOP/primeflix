@@ -115,39 +115,30 @@
                     <a href="#" class="download-btn">Download</a>
                 </div>
 <!-- KESARI SECTION -->
-<div style="text-align:center; margin-top: 50px;">
-  <img id="kesari-poster" src="movie4.jpg" alt="Kesari"
-       style="max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 0 20px orange; cursor:pointer;"
-       onclick="playKesari()" />
-  <h3 style="color: orange; margin-top: 10px;">KESARI</h3>
+<div class="movie-container" style="text-align:center; margin-top:50px;">
+  <div id="kesari-poster" class="movie-poster" style="cursor:pointer;">
+    <img src="movie4.jpg" alt="Kesari" style="max-width:100%; border-radius:10px; box-shadow:0 0 20px orange;">
+    <h3 style="color:orange; margin-top:10px;">KESARI</h3>
+    <div class="movie-info" style="color:white; margin-top:10px;">
+      <p>THE BRAVEST BATTLE EVER FOUGHT</p>
+      <p>THIS HOLL 21ST MARCH 2019</p>
+    </div>
+    <button class="download-btn" style="margin-top:15px;">Download</button>
+  </div>
+
+  <div id="kesari-player" class="movie-player" style="display:none;">
+    <div class="player-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+      <h3 style="color:orange;">KESARI</h3>
+      <button id="close-player" style="background:#e50914; color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer;">
+        Close
+      </button>
+    </div>
+    <video id="kesari-video" controls autoplay style="width:100%; max-height:70vh; border-radius:10px;"></video>
+    <div class="player-actions" style="margin-top:15px;">
+      <button class="download-btn">Download</button>
+    </div>
+  </div>
 </div>
-
-<!-- Hidden player -->
-<div id="kesari-player" style="display:none; text-align:center; margin-top:20px;">
-  <iframe id="kesari-iframe" src="about:blank"
-          width="100%" height="480" allowfullscreen
-          style="border-radius: 15px; border: none;">
-  </iframe>
-</div>
-
-<script>
-  function playKesari() {
-    const player = document.getElementById('kesari-player');
-    const iframe = document.getElementById('kesari-iframe');
-    const poster = document.getElementById('kesari-poster');
-    
-    // Set the iframe source to the Google Drive URL
-    iframe.src = "https://drive.google.com/file/d/1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig/preview?autoplay=1";
-    
-    // Show player and hide poster
-    player.style.display = 'block';
-    poster.style.display = 'none';
-    
-    // Scroll to player
-    player.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-</script>
-
                 </div>
             </div>
         </div>
