@@ -214,56 +214,38 @@ document.addEventListener("DOMContentLoaded", function () {
     adjustBackgroundElements();
 });
 
-<script>
-  function playKesari() {
-    const videoContainer = document.getElementById("kesari-player");
-    const video = document.getElementById("kesari-video");
-
-    // Set Google Drive video link (replace with your link)
-    video.src = "https://drive.google.com/uc?id=1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig";
-
-    videoContainer.style.display = "block";
-    video.play();
-  }
-    <script>
-  const kesariPoster = document.getElementById("kesari-poster");
-  const kesariPlayer = document.getElementById("kesari-player");
-
-  kesariPoster.addEventListener("click", () => {
-    kesariPlayer.style.display = "block";
-    kesariPoster.scrollIntoView({ behavior: "smooth" }); // optional: scroll to video
-  });
-</script>
-    <script>
-  document.getElementById("play-image").addEventListener("click", function() {
-    document.getElementById("kesari-player").style.display = "block";
-    window.scrollTo({
-      top: document.getElementById("kesari-player").offsetTop - 50,
-      behavior: "smooth"
-    });
-  });
-</script>
-
-
-</script>
 // Kesari Movie Player Functionality
 document.addEventListener("DOMContentLoaded", function() {
     const kesariPoster = document.getElementById("kesari-poster");
     const kesariPlayer = document.getElementById("kesari-player");
-    const kesariIframe = document.getElementById("kesari-iframe");
+    const kesariVideo = document.getElementById("kesari-video");
+    const closePlayerBtn = document.getElementById("close-player");
 
-    if (kesariPoster && kesariPlayer && kesariIframe) {
+    if (kesariPoster && kesariPlayer && kesariVideo) {
+        // Direct video URL (replace with your actual direct MP4 URL)
+        const videoUrl = "https://drive.google.com/uc?export=download&id=1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig";
+        
         kesariPoster.addEventListener("click", function() {
-            // Set the iframe source with autoplay parameter
-            kesariIframe.src = "https://drive.google.com/file/d/1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig/preview?autoplay=1";
+            // Set video source
+            kesariVideo.src = videoUrl;
             
             // Show player and hide poster
             kesariPlayer.style.display = "block";
             kesariPoster.style.display = "none";
             
-            // Smooth scroll to the player
+            // Scroll to player smoothly
             kesariPlayer.scrollIntoView({ behavior: "smooth", block: "center" });
+            
+            // Play video
+            kesariVideo.play().catch(e => console.log("Autoplay prevented:", e));
+        });
+
+        // Close player button
+        closePlayerBtn.addEventListener("click", function() {
+            kesariPlayer.style.display = "none";
+            kesariPoster.style.display = "block";
+            kesariVideo.pause();
+            kesariVideo.currentTime = 0;
         });
     }
 });
-
