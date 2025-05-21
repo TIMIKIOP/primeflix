@@ -222,31 +222,29 @@ document.addEventListener("DOMContentLoaded", function() {
     const closePlayerBtn = document.getElementById("close-player");
 
     if (kesariPoster && kesariPlayer && kesariVideo) {
-        // Direct video URL (replace with your actual direct MP4 URL)
-        const videoUrl = "https://drive.google.com/uc?export=download&id=1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig";
+        // Use a direct video URL (you may need to host this file yourself)
+        const videoUrl = "https://drive.google.com/uc?id=1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig"; // Replace with actual direct URL
         
         kesariPoster.addEventListener("click", function() {
             // Set video source
             kesariVideo.src = videoUrl;
             
-            // Show player and hide poster
-            kesariPlayer.style.display = "block";
+            // Switch views
             kesariPoster.style.display = "none";
+            kesariPlayer.style.display = "block";
             
-            // Scroll to player smoothly
-            kesariPlayer.scrollIntoView({ behavior: "smooth", block: "center" });
-            
-            // Play video
-            kesariVideo.play().catch(e => console.log("Autoplay prevented:", e));
+            // Attempt to play (may require user interaction on some browsers)
+            kesariVideo.play().catch(e => {
+                console.log("Autoplay prevented, user must click play:", e);
+            });
         });
-        const videoUrl = "https://drive.google.com/uc?id=1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig&export=download";
 
-        // Close player button
+        // Close player functionality
         closePlayerBtn.addEventListener("click", function() {
-            kesariPlayer.style.display = "none";
-            kesariPoster.style.display = "block";
             kesariVideo.pause();
             kesariVideo.currentTime = 0;
+            kesariPlayer.style.display = "none";
+            kesariPoster.style.display = "block";
         });
     }
 });
