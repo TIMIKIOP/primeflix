@@ -111,13 +111,30 @@
                     <img src="movie4.jpg" alt="Movie 4">
                     <h3>KESARI</h3>
                     <a href="#" class="download-btn">Download</a>
-                    <div style="text-align: center; margin-top: 30px;">
-  <h2 style="color: orange; font-family: 'Arial Black';">🎬 Kesari</h2>
-  <video width="100%" controls autoplay style="max-width: 800px; border: 3px solid orange; border-radius: 10px; box-shadow: 0 0 20px orange;">
+                    <!-- Kesari Movie Poster -->
+<div style="text-align: center; margin-top: 30px;">
+  <img src="https://upload.wikimedia.org/wikipedia/en/9/92/Kesari_%28film%29_poster.jpg" 
+       alt="Kesari" 
+       onclick="playKesari()" 
+       style="cursor: pointer; width: 300px; border-radius: 12px; box-shadow: 0 0 15px orange; transition: 0.3s ease;">
+  <h2 style="color: orange; font-family: 'Arial Black';">KESARI</h2>
+  <button style="background-color: #00bfff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;" onclick="playKesari()">Play Now</button>
+</div>
+
+<!-- Hidden Kesari Video -->
+<div id="kesari-video" style="display: none; text-align: center; margin-top: 20px;">
+  <video width="90%" controls autoplay style="max-width: 800px; border: 3px solid orange; border-radius: 10px; box-shadow: 0 0 20px orange;">
     <source src="https://drive.google.com/uc?id=1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
+
+<script>
+  function playKesari() {
+    document.getElementById('kesari-video').style.display = 'block';
+    window.scrollTo({ top: document.getElementById('kesari-video').offsetTop, behavior: 'smooth' });
+  }
+</script>
 
                 </div>
             </div>
