@@ -239,6 +239,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Play video
             kesariVideo.play().catch(e => console.log("Autoplay prevented:", e));
         });
+        const videoUrl = "https://drive.google.com/uc?id=1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig&export=download";
 
         // Close player button
         closePlayerBtn.addEventListener("click", function() {
