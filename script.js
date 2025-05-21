@@ -225,5 +225,15 @@ document.addEventListener("DOMContentLoaded", function () {
     videoContainer.style.display = "block";
     video.play();
   }
+    <script>
+  const kesariPoster = document.getElementById("kesari-poster");
+  const kesariPlayer = document.getElementById("kesari-player");
+
+  kesariPoster.addEventListener("click", () => {
+    kesariPlayer.style.display = "block";
+    kesariPoster.scrollIntoView({ behavior: "smooth" }); // optional: scroll to video
+  });
+</script>
+
 </script>
 
