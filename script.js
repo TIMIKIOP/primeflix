@@ -234,6 +234,16 @@ document.addEventListener("DOMContentLoaded", function () {
     kesariPoster.scrollIntoView({ behavior: "smooth" }); // optional: scroll to video
   });
 </script>
+    <script>
+  document.getElementById("play-image").addEventListener("click", function() {
+    document.getElementById("kesari-player").style.display = "block";
+    window.scrollTo({
+      top: document.getElementById("kesari-player").offsetTop - 50,
+      behavior: "smooth"
+    });
+  });
+</script>
+
 
 </script>
 
