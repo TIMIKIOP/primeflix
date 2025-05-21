@@ -246,4 +246,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 </script>
+// Kesari Movie Player Functionality
+document.addEventListener("DOMContentLoaded", function() {
+    const kesariPoster = document.getElementById("kesari-poster");
+    const kesariPlayer = document.getElementById("kesari-player");
+    const kesariIframe = document.getElementById("kesari-iframe");
+
+    if (kesariPoster && kesariPlayer && kesariIframe) {
+        kesariPoster.addEventListener("click", function() {
+            // Set the iframe source with autoplay parameter
+            kesariIframe.src = "https://drive.google.com/file/d/1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig/preview?autoplay=1";
+            
+            // Show player and hide poster
+            kesariPlayer.style.display = "block";
+            kesariPoster.style.display = "none";
+            
+            // Smooth scroll to the player
+            kesariPlayer.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+    }
+});
 
