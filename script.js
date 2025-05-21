@@ -216,31 +216,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Kesari Movie Player Functionality
 document.addEventListener("DOMContentLoaded", function() {
+    const playBtn = document.getElementById("play-kesari-btn");
     const kesariPoster = document.getElementById("kesari-poster");
     const kesariPlayer = document.getElementById("kesari-player");
     const kesariVideo = document.getElementById("kesari-video");
-    const closePlayerBtn = document.getElementById("close-player");
+    const closeBtn = document.getElementById("close-player");
 
-    if (kesariPoster && kesariPlayer && kesariVideo) {
-        // Use a direct video URL (you may need to host this file yourself)
-        const videoUrl = "https://drive.google.com/uc?id=1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig"; // Replace with actual direct URL
+    if (playBtn && kesariVideo) {
+        // Use a direct video URL (replace with your actual video URL)
+        const videoUrl = "https://drive.google.com/uc?id=1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig";
         
-        kesariPoster.addEventListener("click", function() {
+        // Play button click handler
+        playBtn.addEventListener("click", function() {
             // Set video source
             kesariVideo.src = videoUrl;
             
-            // Switch views
+            // Show player and hide poster
             kesariPoster.style.display = "none";
             kesariPlayer.style.display = "block";
             
-            // Attempt to play (may require user interaction on some browsers)
+            // Play video (will work because triggered by user click)
             kesariVideo.play().catch(e => {
-                console.log("Autoplay prevented, user must click play:", e);
+                alert("Please click the play button in the video player");
             });
         });
 
-        // Close player functionality
-        closePlayerBtn.addEventListener("click", function() {
+        // Close button functionality
+        closeBtn.addEventListener("click", function() {
             kesariVideo.pause();
             kesariVideo.currentTime = 0;
             kesariPlayer.style.display = "none";
