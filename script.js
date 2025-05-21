@@ -213,3 +213,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     adjustBackgroundElements();
 });
+
+<script>
+  function playKesari() {
+    const videoContainer = document.getElementById("kesari-player");
+    const video = document.getElementById("kesari-video");
+
+    // Set Google Drive video link (replace with your link)
+    video.src = "https://drive.google.com/uc?export=download&id=1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig";
+
+    videoContainer.style.display = "block";
+    video.play();
+  }
+</script>
+
