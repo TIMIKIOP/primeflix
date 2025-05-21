@@ -593,4 +593,30 @@ body {
   margin: 10px auto;
   font-size: 18px;
 }
+/* Make images and videos responsive */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
 
+/* Make buttons wrap on small screens */
+button {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px auto;
+  display: block;
+}
+
+/* Use flex layout for movie cards */
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.movie-card {
+  flex: 1 1 300px;
+  max-width: 300px;
+  text-align: center;
+}
