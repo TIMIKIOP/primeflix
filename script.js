@@ -229,8 +229,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (playBtn && kesariImg && kesariPlayer && kesariPoster && closeBtn) {
-        playBtn.addEventListener("click", showPlayer);
-        kesariImg.addEventListener("click", showPlayer);
+        playBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    showPlayer();
+});
+kesariImg.addEventListener("click", function(event) {
+    event.preventDefault();
+    showPlayer();
+});
+
 
         closeBtn.addEventListener("click", function () {
             kesariPlayer.style.display = "none";
