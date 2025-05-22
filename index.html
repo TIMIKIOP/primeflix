@@ -117,35 +117,41 @@
 <!-- KESARI SECTION -->
 <div style="text-align:center; margin-top:50px; position:relative;">
   <div id="kesari-poster">
-    <img src="movie4.jpg" alt="Kesari" 
-         style="max-width:100%; border-radius:10px; box-shadow:0 0 20px orange;">
+    <img id="kesari-img" src="movie4.jpg" alt="Kesari"
+      style="max-width:100%; border-radius:10px; box-shadow:0 0 20px orange; cursor:pointer;">
     <h3 style="color:orange; margin-top:10px;">KESARI</h3>
     <div style="color:white; margin:10px 0;">
       <p>THE BRAVEST BATTLE EVER FOUGHT</p>
-      <p>THIS HOLL 21ST MARCH 2019</p>
+      <p>THIS HOLI 21ST MARCH 2019</p>
     </div>
-    <button id="play-kesari-btn" 
-            style="background:#e50914; color:white; border:none; padding:10px 20px; 
-                  border-radius:5px; cursor:pointer; font-weight:bold; margin:10px;">
+
+    <button id="play-kesari-btn"
+      style="background:#e50914; color:white; border:none; padding:10px 20px;
+      border-radius:5px; cursor:pointer; font-weight:bold; margin:10px;">
       ▶ PLAY NOW
     </button>
     <button class="download-btn">Download</button>
   </div>
 
+  <!-- Player -->
   <div id="kesari-player" style="display:none; text-align:center;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
       <h3 style="color:orange;">KESARI</h3>
-      <button id="close-player" 
-              style="background:#e50914; color:white; border:none; 
-                    padding:5px 10px; border-radius:5px; cursor:pointer;">
+      <button id="close-player"
+        style="background:#e50914; color:white; border:none;
+        padding:5px 10px; border-radius:5px; cursor:pointer;">
         X CLOSE
       </button>
     </div>
-    <video id="kesari-video" controls autoplay 
-           style="width:100%; max-height:70vh; border-radius:10px;"></video>
+
+    <!-- Google Drive Embedded Player -->
+    <iframe src="https://drive.google.com/file/d/1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig/preview"
+      width="100%" height="480" allow="autoplay; encrypted-media" allowfullscreen
+      style="border-radius: 10px; border: none;">
+    </iframe>
   </div>
 </div>
-                </div>
+
             </div>
         </div>
     </section>
