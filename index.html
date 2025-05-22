@@ -144,13 +144,13 @@
       </button>
     </div>
 
-    <!-- Google Drive Embedded Player -->
-    <iframe src="https://drive.google.com/file/d/1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig/preview"
-      width="100%" height="480" allow="autoplay; encrypted-media" allowfullscreen
-      style="border-radius: 10px; border: none;">
-    </iframe>
-  </div>
-</div>
+   <!-- Google Drive Embedded Player -->
+<iframe 
+  src="https://drive.google.com/file/d/1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig/preview?autoplay=1&mute=1"
+  width="100%" height="480" allow="autoplay; encrypted-media" allowfullscreen
+  style="border-radius: 10px; border: none;">
+</iframe>
+
 
             </div>
         </div>
@@ -361,6 +361,24 @@
 <input type="hidden" name="form-name" value="signup" />
 
 <p>&copy; 2024 PrimeFlix. All rights reserved.</p>
+        <script>
+  const playBtn = document.getElementById("play-kesari-btn");
+  const kesariImg = document.getElementById("kesari-img");
+  const player = document.getElementById("kesari-player");
+  const closeBtn = document.getElementById("close-player");
+
+  function showPlayer() {
+    player.style.display = "block";
+    window.scrollTo({ top: player.offsetTop - 100, behavior: 'smooth' });
+  }
+
+  playBtn.addEventListener("click", showPlayer);
+  kesariImg.addEventListener("click", showPlayer);
+  closeBtn.addEventListener("click", () => {
+    player.style.display = "none";
+  });
+</script>
+
 </body>
 </html>
 
