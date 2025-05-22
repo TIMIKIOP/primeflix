@@ -215,36 +215,24 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Kesari Movie Player Functionality
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const playBtn = document.getElementById("play-kesari-btn");
-    const kesariPoster = document.getElementById("kesari-poster");
+    const kesariImg = document.getElementById("kesari-img");
     const kesariPlayer = document.getElementById("kesari-player");
-    const kesariVideo = document.getElementById("kesari-video");
+    const kesariPoster = document.getElementById("kesari-poster");
     const closeBtn = document.getElementById("close-player");
 
-    if (playBtn && kesariVideo) {
-        // Use a direct video URL (replace with your actual video URL)
-        const videoUrl = "https://drive.google.com/uc?id=1HEsbM24AAS29D7k5rnBE_tLQJFNUr3ig";
-        
-        // Play button click handler
-        playBtn.addEventListener("click", function() {
-            // Set video source
-            kesariVideo.src = videoUrl;
-            
-            // Show player and hide poster
-            kesariPoster.style.display = "none";
-            kesariPlayer.style.display = "block";
-            
-            // Play video (will work because triggered by user click)
-            kesariVideo.play().catch(e => {
-                alert("Please click the play button in the video player");
-            });
-        });
+    function showPlayer() {
+        kesariPoster.style.display = "none";
+        kesariPlayer.style.display = "block";
+        window.scrollTo({ top: kesariPlayer.offsetTop - 100, behavior: 'smooth' });
+    }
 
-        // Close button functionality
-        closeBtn.addEventListener("click", function() {
-            kesariVideo.pause();
-            kesariVideo.currentTime = 0;
+    if (playBtn && kesariImg && kesariPlayer && kesariPoster && closeBtn) {
+        playBtn.addEventListener("click", showPlayer);
+        kesariImg.addEventListener("click", showPlayer);
+
+        closeBtn.addEventListener("click", function () {
             kesariPlayer.style.display = "none";
             kesariPoster.style.display = "block";
         });
